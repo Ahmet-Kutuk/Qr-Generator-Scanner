@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: white;">QRDOT</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon style="color: white;" slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br>
+    <ion-item>
+      <ion-input type="text" placeholder="Dönüştürülecek"  [(ngModel)]="qrData"></ion-input>
+    </ion-item><br>
+    <button ion-button full (click)="createCode()">Create Code</button><br>
+   
+    
+    <ion-card  *ngIf="createdCode">
+      <ion-card-content>
+        <ngx-qrcode [value]="createdCode"></ngx-qrcode>
+        <p class="create">Dönüştürülen: {{createdCode}}</p>
+      </ion-card-content>
+    </ion-card>
+    <p>OR</p>
+    <button class="scan" ion-button full (click)="scanCode()">Scan Code</button>
+    <ion-card *ngIf="scannedCode">
+      <ion-card-content>
+        Result from Scan: {{scannedCode}}
+      </ion-card-content>
+    </ion-card>
+</ion-content>

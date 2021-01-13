@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color:White;">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Giriş Yap'"></app-auth-form>
+
+  <ion-button expand="block" fill="clear" style="color: white;" routerLink="/signup">
+   Yeni Hesap Oluştur
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" style="color: white;" routerLink="/reset-password">
+    Şifremi Unuttum
+  </ion-button>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color:white;" defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:white;">Hesap Oluştur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Hesap Oluştur'"></app-auth-form>
+
+  <ion-button expand="block" style="color:White;" fill="clear" routerLink="/login">
+  Zaten bir hesabım var.
+  </ion-button>
+</ion-content>
